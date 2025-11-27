@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hochzeit — Helena & Mario</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Basis-Salbei: #d6ded6 */
+      --sage-base: #d6ded6;
+      --accent: #577a57;       /* dunkleres Grün für Akzente */
+      --accent-2: #e8f0e8;     /* hellere Salbei-Akzentfläche */
+      --muted: #556b56;        /* Text-Mute in Grüntönen */
+      --bg: #f6faf6;           /* sehr heller Grünton-Hintergrund */
+      --card:#ffffff;
+      --maxw:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--muted);
+      background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    header.hero{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      padding:36px;
+      border-radius:14px;
+      background:
+        radial-gradient(600px 200px at 10% 10%, rgba(87,122,87,0.06), transparent 10%),
+        linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+      box-shadow:0 6px 30px rgba(34,56,34,0.06);
+      margin-bottom:28px;
+      border:1px solid rgba(87,122,87,0.06);
+    }
+
+    .hero .left{ flex:1 1 360px; }
+    .hero h1{
+      font-family:"Playfair Display", serif;
+      margin:0 0 6px 0;
+      font-size:40px;
+      color:var(--accent);
+      letter-spacing:0.2px;
+    }
+    .hero p.lead{
+      margin:0 0 16px 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .date-pill{
+      display:inline-block;
+      background:var(--accent-2);
+      color:var(--accent);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      box-shadow:inset 0 -2px 0 rgba(0,0,0,0.02);
+    }
+
+    .hero .right{
+      width:200px;
+      min-width:160px;
+      text-align:center;
+    }
+    .hero .right .circle{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      margin:0 auto 12px auto;
+      background:linear-gradient(135deg, #6b8f6b, #a8c2a8);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-family:"Playfair Display", serif;
+      font-size:22px;
+      box-shadow:0 8px 24px rgba(87,122,87,0.14);
+      border:3px solid rgba(255,255,255,0.06);
+    }
+
+    section.card{
+      background:var(--card);
+      padding:20px 22px;
+      border-radius:12px;
+      margin-bottom:18px;
+      box-shadow:0 6px 18px rgba(36,36,36,0.04);
+      border:1px solid rgba(87,122,87,0.04);
+    }
+
+    h2{
+      margin:0 0 8px 0;
+      font-family:"Playfair Display", serif;
+      color:var(--accent);
+      font-size:22px;
+    }
+    p{margin:0 0 10px 0; color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    @media (max-width:720px){
+      .hero{flex-direction:column; text-align:center}
+      .hero .right{order:-1}
+      .grid{grid-template-columns:1fr}
+    }
+
+    .list{ margin:8px 0 0 0; padding:0; list-style:none; }
+    .list li{
+      padding:12px 14px;
+      border-radius:8px;
+      background: linear-gradient(180deg, #f9fbf9, #ffffff);
+      margin-bottom:10px;
+      border:1px solid rgba(87,122,87,0.04);
+      color:var(--muted);
+    }
+    a.link {
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .map-embed{
+      width:100%;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,0.06);
+      height:320px;
+      background: linear-gradient(180deg,#eef6ee,#ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .meta-row{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    .meta{
+      background:var(--accent-2);
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:14px;
+      color:var(--accent);
+    }
+
+    .note{ font-size:13px; color:var(--muted); }
+
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#e8efe8,transparent);margin:18px 0;border-radius:1px}
+
+    /* subtle link focus */
+    a:focus{ outline:3px solid rgba(87,122,87,0.12); outline-offset:2px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero card" role="banner" aria-labelledby="hero-title">
+      <div class="left">
+        <h1 id="hero-title">Helena & Mario</h1>
+        <p class="lead">Wir heiraten am 20. Juni 2026 — Ihr seid eingeladen, mit uns zu feiern. Unten findet ihr Location-, Parkplatz- und Übernachtungsdetails.</p>
+        <div class="meta-row" style="gap:10px; margin-top:12px;">
+          <span class="date-pill">Samstag, 20. Juni 2026</span>
+          <span class="meta">Seepromenade 1, 82237 Wörthsee</span>
+        </div>
+      </div>
+
+      <div class="right" aria-hidden="true">
+        <div class="circle">20 · 06 · 26</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px">Augustiner am Wörthsee</div>
+      </div>
+    </header>
+
+    <!-- LOCATION -->
+    <section class="card" id="location">
+      <h2>Location & Adresse</h2>
+      <p><strong>Augustiner am Wörthsee</strong><br>
+        Seepromenade 1, 82237 Wörthsee</p>
+      <p class="note">Klickt die Adresse für die Karten-Ansicht:</p>
+      <p><a class="link" href="https://maps.app.goo.gl/pdpaRR7hE4nA7HaN9" target="_blank" rel="noopener">https://maps.app.goo.gl/pdpaRR7hE4nA7HaN9</a></p>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <h2>Parken</h2>
+      <p>Parkplätze in Steinebach am Wörthsee sind begrenzt. Bitte kommt bei gutem Wetter frühzeitig oder parkt weiter weg und kommt zu Fuß.</p>
+
+      <div class="grid" style="margin-top:8px;">
+        <div>
+          <h3 style="font-size:16px;margin:0 0 6px 0;color:var(--accent)">Rathaus Parkplatz</h3>
+          <p>Seestraße 67, 82237 Wörthsee<br>
+            <a class="link" href="https://maps.app.goo.gl/Nyez5tGpd4vr6qzD6" target="_blank" rel="noopener">Kartenlink</a></p>
+        </div>
+
+        <div>
+          <h3 style="font-size:16px;margin:0 0 6px 0;color:var(--accent)">P + R Steinebach (S-Bahn)</h3>
+          <p>Grosser Parkplatz bei der S-Bahn „Steinebach“ — ca. 15 Minuten zu Fuß zur Location.<br>
+            <a class="link" href="https://maps.app.goo.gl/4W9HLAbieGdCwzKx9" target="_blank" rel="noopener">Kartenlink</a></p>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:8px">Wir können auf der Karte noch eine Skizze einzeichnen. (Der Ortsplan war lokal verlinkt — ersetzt den Link bitte mit einer hochgeladenen PDF/PNG falls gewünscht.)</p>
+    </section>
+
+    <!-- MAP -->
+    <section class="card" id="map">
+      <h2>Standort auf der Karte</h2>
+      <div class="map-embed" aria-hidden="false">
+        <div>
+          <p style="margin:0 0 6px 0"><strong>Direkter Kartenlink:</strong></p>
+          <p style="margin:0"><a class="link" href="https://maps.app.goo.gl/pdpaRR7hE4nA7HaN9" target="_blank" rel="noopener">Seepromenade 1, 82237 Wörthsee — Karte öffnen</a></p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:8px">Wenn gewünscht, binde ich gern ein interaktives Google-Map iframe oder eine statische Skizze direkt auf der Seite ein.</p>
+    </section>
+
+    <!-- ACCOMMODATION -->
+    <section class="card" id="accommodation">
+      <h2>Übernachtungsmöglichkeiten (reserviert)</h2>
+      <p>Wir haben für Gäste Zimmer vorgemerkt. Wenn ihr Interesse habt, meldet euch bitte möglichst bald — Reservierungen laufen unterschiedlich lange.</p>
+
+      <ul class="list" style="margin-top:8px">
+        <li>
+          <strong>Lago Mio / Pension am See</strong> — 2 Minuten zu Fuß<br>
+          <a class="link" href="https://lago-mio.de/Pension" target="_blank" rel="noopener">lago-mio.de/Pension</a>
+          <div class="note" style="margin-top:6px">Vorgemerkt: 3 Doppelzimmer (19.–21.06.26) 125€/Nacht; 1 Familienzimmer (18.–21.06.26) 125€/Nacht (Aufpreise für zusätzliche Personen); 2 Dreibettzimmer im Seehaus 115€/Nacht.</div>
+          <div class="note" style="margin-top:6px"><em>Reserviert bis Ende Februar</em></div>
+        </li>
+
+        <li>
+          <strong>Hotel Jakl-Hof</strong> — ca. 8 Minuten zu Fuß<br>
+          <a class="link" href="https://jakl-hof.de/" target="_blank" rel="noopener">jakl-hof.de</a>
+          <div class="note" style="margin-top:6px">Vorgemerkt: 2 Doppelzimmer + 1 Familienzimmer für Nacht 20./21.06; 6 Doppelzimmer + 2 Familienzimmer für 19.–21.06. Preise ab 139€/Nacht (Doppelzimmer).</div>
+          <div class="note" style="margin-top:6px"><em>Reserviert bis Ende Januar</em></div>
+        </li>
+
+        <li>
+          <strong>Ferienhof Seethaler</strong> — ca. 7 Minuten zu Fuß<br>
+          <a class="link" href="https://ferienhof-seethaler.de/" target="_blank" rel="noopener">ferienhof-seethaler.de</a>
+          <div class="note" style="margin-top:6px">Vorgemerkt: 1 Ferienwohnung (60 m²) 17.–21.06 für 150€/Nacht (bis zu 3 Personen). Reserviert bis Anfang April.</div>
+        </li>
+
+        <li>
+          <strong>Hotel Il Plonner (Oberpfaffenhofen)</strong> — ca. 15 Minuten mit dem Auto<br>
+          <a class="link" href="https://www.ilplonner.de/" target="_blank" rel="noopener">ilplonner.de</a>
+          <div class="note" style="margin-top:6px">Bio-Hotel mit 9 Zimmern; Raten: EZ 109€, DZ 159€, Familienzimmer 189€ (inkl. Frühstück).</div>
+        </li>
+
+        <li>
+          <strong>Parkhotel Leiser Planegg</strong><br>
+          <div class="note" style="margin-top:6px">Ca. 20 Minuten mit dem Auto zur Location. Nah an Helena &amp; Mario's Zuhause — eine Alternative für längere Aufenthalte.</div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <div style="color:var(--muted);">Wir freuen uns auf euch — Helena &amp; Mario</div>
+    </footer>
+  </div>
+</body>
+</html>
