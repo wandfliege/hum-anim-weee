@@ -180,6 +180,51 @@
 
     .divider{height:1px;background:linear-gradient(90deg,transparent,#e8efe8,transparent);margin:18px 0;border-radius:1px}
 
+    /* Details/Summary Styling */
+    details{
+      margin:0;
+    }
+
+    summary{
+      cursor:pointer;
+      user-select:none;
+      padding:12px 0;
+      font-weight:600;
+      color:var(--accent);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:16px;
+    }
+
+    summary:hover{
+      color:var(--accent);
+      opacity:0.8;
+    }
+
+    summary::marker{
+      color:var(--accent);
+    }
+
+    details[open] summary{
+      margin-bottom:8px;
+    }
+
+    details-content{
+      animation:slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown{
+      from{
+        opacity:0;
+        max-height:0;
+      }
+      to{
+        opacity:1;
+        max-height:1000px;
+      }
+    }
+
     /* subtle link focus */
     a:focus{ outline:3px solid rgba(87,122,87,0.12); outline-offset:2px; border-radius:6px; }
   </style>
@@ -242,52 +287,56 @@
 
     <!-- ACCOMMODATION -->
     <section class="card" id="accommodation">
-      <h2>Übernachtungsmöglichkeiten (reserviert)</h2>
-      <p>Wir haben für Gäste Zimmer vorgemerkt. Wenn ihr Interesse habt, meldet euch bitte möglichst bald — Reservierungen laufen unterschiedlich lange.</p>
+      <details>
+        <summary>📋 Hotelreservierungen anzeigen</summary>
+        <div style="padding-top:12px;">
+          <p>Wir haben für Gäste Zimmer vorgemerkt. Wenn ihr Interesse habt, meldet euch bitte möglichst bald — Reservierungen laufen unterschiedlich lange.</p>
 
-      <ul class="list" style="margin-top:8px">
-        <li>
-          <strong>Lago Mio / Pension am See</strong> — 2 Minuten zu Fuß<br>
-          <a class="link" href="https://lago-mio.de/Pension" target="_blank" rel="noopener">lago-mio.de/Pension</a>
-          <div class="note" style="margin-top:6px">Vorgemerkt: 3 Doppelzimmer (19.–21.06.26) 125€/Nacht; 1 Familienzimmer (18.–21.06.26) 125€/Nacht (Aufpreise für zusätzliche Personen);[...]
-          <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende Februar</em></div>
-        </li>
+          <ul class="list" style="margin-top:8px">
+            <li>
+              <strong>Lago Mio / Pension am See</strong> — 2 Minuten zu Fuß<br>
+              <a class="link" href="https://lago-mio.de/Pension" target="_blank" rel="noopener">lago-mio.de/Pension</a>
+              <div class="note" style="margin-top:6px">Vorgemerkt: 3 Doppelzimmer (19.–21.06.26) 125€/Nacht; 1 Familienzimmer (18.–21.06.26) 125€/Nacht (Aufpreise für zusätzliche Personen);[...]
+              <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende Februar</em></div>
+            </li>
 
-        <li>
-          <strong>Hotel Jakl-Hof</strong> — ca. 8 Minuten zu Fuß<br>
-          <a class="link" href="https://jakl-hof.de/" target="_blank" rel="noopener">jakl-hof.de</a>
-          <div class="note" style="margin-top:6px">Vorgemerkt: 2 Doppelzimmer + 1 Familienzimmer für Nacht 20./21.06; 6 Doppelzimmer + 2 Familienzimmer für 19.–21.06. Preise ab 139€/Nacht ([...]
-          <div class="note" style="margin-top:6px"><em><strong></strong>HIER bitte bei Helena und Mario direkt melden.</em></strong> Reserviert bis Ende Januar.</em></div>
-        </li>
+            <li>
+              <strong>Hotel Jakl-Hof</strong> — ca. 8 Minuten zu Fuß<br>
+              <a class="link" href="https://jakl-hof.de/" target="_blank" rel="noopener">jakl-hof.de</a>
+              <div class="note" style="margin-top:6px">Vorgemerkt: 2 Doppelzimmer + 1 Familienzimmer für Nacht 20./21.06; 6 Doppelzimmer + 2 Familienzimmer für 19.–21.06. Preise ab 139€/Nacht ([...]
+              <div class="note" style="margin-top:6px"><em><strong></strong>HIER bitte bei Helena und Mario direkt melden.</em></strong> Reserviert bis Ende Januar.</em></div>
+            </li>
 
-        <li>
-          <strong>Ferienhof Seethaler</strong> — ca. 7 Minuten zu Fuß<br>
-          <a class="link" href="https://ferienhof-seethaler.de/" target="_blank" rel="noopener">ferienhof-seethaler.de</a>
-          <div class="note" style="margin-top:6px">Vorgemerkt: 1 Ferienwohnung, 17.–21.06 für 150€/Nacht (bis zu 3 Personen).</div>
-          <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende März.</em></div>
-        </li>
+            <li>
+              <strong>Ferienhof Seethaler</strong> — ca. 7 Minuten zu Fuß<br>
+              <a class="link" href="https://ferienhof-seethaler.de/" target="_blank" rel="noopener">ferienhof-seethaler.de</a>
+              <div class="note" style="margin-top:6px">Vorgemerkt: 1 Ferienwohnung, 17.–21.06 für 150€/Nacht (bis zu 3 Personen).</div>
+              <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende März.</em></div>
+            </li>
 
-        <li>
-          <strong>Grundlers Gästehaus am See</strong><br> — ca. 6 Minuten zu Fuß<br>
-          <a class="link" href="https://www.grundlers.info/" target="_blank" rel="noopener">grundlers.info</a>
-          <div class="note" style="margin-top:6px">Vorgemerkt: 2 Ferienwohnungen, ab 235€/Nacht für bis zu 2 Personen (Aufpreise für zusätzliche Personen). Mindestaufenthalt 4 Nächte.</div>
-          <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende März.</em></div>
-        </li>
+            <li>
+              <strong>Grundlers Gästehaus am See</strong><br> — ca. 6 Minuten zu Fuß<br>
+              <a class="link" href="https://www.grundlers.info/" target="_blank" rel="noopener">grundlers.info</a>
+              <div class="note" style="margin-top:6px">Vorgemerkt: 2 Ferienwohnungen, ab 235€/Nacht für bis zu 2 Personen (Aufpreise für zusätzliche Personen). Mindestaufenthalt 4 Nächte.</div>
+              <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende März.</em></div>
+            </li>
 
-        <li>
-          <strong>Hotel Il Plonner (Oberpfaffenhofen)</strong> — ca. 15 Minuten mit dem Auto<br>
-          <a class="link" href="https://www.ilplonner.de/" target="_blank" rel="noopener">ilplonner.de</a>
-          <div class="note" style="margin-top:6px">Bio-Hotel mit 9 Zimmern; Raten: EZ 109€, DZ 159€, Familienzimmer 189€ (inkl. Frühstück).</div>
-          <div class="note" style="margin-top:6px"><em>Gebt hier "Hochzeit Fuchs" mit an. Reserviert bis Ende März</em></div>
-        </li>
+            <li>
+              <strong>Hotel Il Plonner (Oberpfaffenhofen)</strong> — ca. 15 Minuten mit dem Auto<br>
+              <a class="link" href="https://www.ilplonner.de/" target="_blank" rel="noopener">ilplonner.de</a>
+              <div class="note" style="margin-top:6px">Bio-Hotel mit 9 Zimmern; Raten: EZ 109€, DZ 159€, Familienzimmer 189€ (inkl. Frühstück).</div>
+              <div class="note" style="margin-top:6px"><em>Gebt hier "Hochzeit Fuchs" mit an. Reserviert bis Ende März</em></div>
+            </li>
 
-        <li>
-          <strong>Parkhotel Leiser Planegg</strong><br> — ca. 20 Minuten mit dem Auto<br>
-          <div class="note" style="margin-top:6px">Nah an Helena &amp; Mario's Zuhause — eine Alternative für längere Aufenthalte.</div>
-          <div class="note" style="margin-top:6px">Vorgemerkt: größeres Kontigent, ab 145€/Zimmer/Nacht für 2 Personen.</div>
-          <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende März.</em></div>
-        </li>
-      </ul>
+            <li>
+              <strong>Parkhotel Leiser Planegg</strong><br> — ca. 20 Minuten mit dem Auto<br>
+              <div class="note" style="margin-top:6px">Nah an Helena &amp; Mario's Zuhause — eine Alternative für längere Aufenthalte.</div>
+              <div class="note" style="margin-top:6px">Vorgemerkt: größeres Kontigent, ab 145€/Zimmer/Nacht für 2 Personen.</div>
+              <div class="note" style="margin-top:6px"><em>Gebt bei der Buchung "Hochzeit Fuchs" mit an. Reserviert bis Ende März.</em></div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </section>
 
     <footer>
