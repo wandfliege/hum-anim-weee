@@ -132,10 +132,96 @@
       grid-template-columns:repeat(2,1fr);
       gap:12px;
     }
+    
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .info-box{
+      background: linear-gradient(180deg, #f9fbf9, #ffffff);
+      padding:16px;
+      border-radius:10px;
+      border:1px solid rgba(87,122,87,0.04);
+    }
+
+    .info-box h3{
+      margin:0 0 12px 0;
+      font-size:16px;
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    .program-item{
+      margin-bottom:16px;
+      padding-bottom:16px;
+      border-bottom:1px solid rgba(87,122,87,0.08);
+    }
+
+    .program-item:last-child{
+      margin-bottom:0;
+      padding-bottom:0;
+      border-bottom:none;
+    }
+
+    .program-time{
+      font-weight:600;
+      color:var(--accent);
+      font-size:14px;
+      letter-spacing:0.5px;
+    }
+
+    .program-desc{
+      font-size:14px;
+      color:var(--muted);
+      margin-top:4px;
+      letter-spacing:0.3px;
+    }
+
+    .qr-code-container{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .qr-code-svg{
+      width:100px;
+      height:100px;
+      margin-bottom:12px;
+      background:white;
+      padding:8px;
+      border-radius:6px;
+    }
+
+    .tips-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .tips-list li{
+      padding:8px 0;
+      padding-left:24px;
+      position:relative;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .tips-list li:before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--accent);
+      font-weight:bold;
+    }
+
     @media (max-width:720px){
       .hero{flex-direction:column; text-align:center}
       .hero .right{order:-1}
       .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
     }
 
     .list{ margin:8px 0 0 0; padding:0; list-style:none; }
@@ -281,6 +367,76 @@
           <p>Grosser Parkplatz bei der S-Bahn „Steinebach".<br>
             <a class="link" href="https://maps.app.goo.gl/4W9HLAbieGdCwzKx9" target="_blank" rel="noopener">Kartenlink</a></p>
           <p class="note"><strong>Fußweg ca. 15 Minuten</strong> zur Location einplanen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFOS -->
+    <section class="card" id="infos">
+      <h2>Infos <span class="badge">NEU</span></h2>
+      
+      <div class="grid-3" style="margin-top:16px;">
+        <!-- Programmplan -->
+        <div class="info-box">
+          <h3>📅 Programmplan</h3>
+          <div class="program-item">
+            <div class="program-time">14:00 UHR</div>
+            <div class="program-desc">Beginn und Zeremonie am See</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">15:00 UHR</div>
+            <div class="program-desc">Kaffee & Kuchen</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">16:00 UHR</div>
+            <div class="program-desc">Baden im See & Kinder-Spielespass</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">18:00 UHR</div>
+            <div class="program-desc">Abendessen</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">BIS 01:00 UHR</div>
+            <div class="program-desc">Party</div>
+          </div>
+        </div>
+
+        <!-- Fotos mit QR Code -->
+        <div class="info-box">
+          <h3>📸 Fotos</h3>
+          <p style="font-size:14px; margin-bottom:12px;">Teilt gerne eure tollen Momente und Fotos auf Celebrate — so können wir alle schönen Augenblicke der Hochzeit zusammen genießen!</p>
+          <div class="qr-code-container">
+            <svg class="qr-code-svg" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
+              <rect width="29" height="29" fill="white"/>
+              <path d="M1,1 h7 v7 h-7 z" fill="black"/>
+              <path d="M2,2 h5 v5 h-5 z" fill="white"/>
+              <path d="M3,3 h3 v3 h-3 z" fill="black"/>
+              <path d="M9,1 h1 v1 h-1 z M10,1 h1 v1 h-1 z M11,1 h1 v1 h-1 z M12,1 h1 v1 h-1 z M13,1 h1 v1 h-1 z M14,1 h1 v1 h-1 z M21,1 h7 v7 h-7 z" fill="black"/>
+              <path d="M22,2 h5 v5 h-5 z" fill="white"/>
+              <path d="M23,3 h3 v3 h-3 z" fill="black"/>
+              <path d="M1,9 h1 v1 h-1 z M2,9 h1 v1 h-1 z M3,9 h1 v1 h-1 z M4,9 h1 v1 h-1 z M5,9 h1 v1 h-1 z M6,9 h1 v1 h-1 z M7,9 h1 v1 h-1 z" fill="black"/>
+              <path d="M9,9 h1 v1 h-1 z M10,9 h1 v1 h-1 z M13,9 h1 v1 h-1 z M14,9 h1 v1 h-1 z M21,9 h1 v1 h-1 z M22,9 h1 v1 h-1 z M23,9 h1 v1 h-1 z M24,9 h1 v1 h-1 z M25,9 h1 v1 h-1 z M26,9 h1 v1 h-1 z M27,9 h1 v1 h-1 z" fill="black"/>
+              <path d="M1,21 h7 v7 h-7 z" fill="black"/>
+              <path d="M2,22 h5 v5 h-5 z" fill="white"/>
+              <path d="M3,23 h3 v3 h-3 z" fill="black"/>
+              <path d="M9,21 h1 v1 h-1 z M10,21 h1 v1 h-1 z M11,21 h1 v1 h-1 z M12,21 h1 v1 h-1 z M13,21 h1 v1 h-1 z M14,21 h1 v1 h-1 z" fill="black"/>
+              <path d="M21,21 h7 v7 h-7 z" fill="black"/>
+              <path d="M22,22 h5 v5 h-5 z" fill="white"/>
+              <path d="M23,23 h3 v3 h-3 z" fill="black"/>
+              <path d="M9,2 h5 v5 h-5 z M9,11 h5 v5 h-5 z M17,2 h4 v4 h-4 z M17,8 h4 v4 h-4 z M17,14 h4 v4 h-4 z M17,20 h4 v4 h-4 z" fill="black"/>
+            </svg>
+            <p style="font-size:12px; color:var(--muted); text-align:center;">Scannt den QR-Code mit eurem Smartphone</p>
+          </div>
+        </div>
+
+        <!-- Weiteres -->
+        <div class="info-box">
+          <h3>ℹ️ Weiteres</h3>
+          <p style="font-size:14px; margin-bottom:12px;">Ein paar praktische Tipps für den Tag:</p>
+          <ul class="tips-list">
+            <li>Ausreichend Sonnenschutz mitbringen</li>
+            <li>Mückenspray nicht vergessen</li>
+          </ul>
         </div>
       </div>
     </section>
